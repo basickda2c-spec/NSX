@@ -47,12 +47,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 @font-face {
 	font-family: 'HELVETICA REGULAR';
 	font-weight: 400;
-	src: url('https://nsxcreative.com/wp-content/uploads/2024/01/Helvetica.ttf') format('truetype');
+	src: url('./assets/fonts/Helvetica.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'HELVETICA BOLD';
 	font-weight: 300;
-	src: url('https://nsxcreative.com/wp-content/uploads/2024/01/Helvetica-Bold.ttf') format('truetype');
+	src: url('./assets/fonts/Helvetica-Bold.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'INTEGRA REG';
@@ -61,12 +61,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 @font-face {
 	font-family: 'INTEGRA REG';
 	font-weight: 400;
-	src: url('https://nsxcreative.com/wp-content/uploads/2024/01/Fontspring-DEMO-integralcf-regular.otf') format('OpenType');
+	src: url('./assets/fonts/Fontspring-DEMO-integralcf-regular.otf') format('OpenType');
 }
 @font-face {
 	font-family: 'integra';
 	font-weight: 400;
-	src: url('https://nsxcreative.com/wp-content/uploads/2024/01/Fontspring-DEMO-integralcf-medium.otf') format('OpenType');
+	src: url('./assets/fonts/Fontspring-DEMO-integralcf-medium.otf') format('OpenType');
 }
 /*# sourceURL=cf-frontend-style-inline-css */
 </style>
@@ -737,6 +737,18 @@ var ClapatThemeOptions = {"share_social_network_list":"facebook,twitter,pinteres
 //# sourceURL=harington-common-js-extra
 </script>
 <script id="harington-common-js" src="./assets/common.js"></script>
+<script id="nsx-stable-dropdown-fix">
+jQuery(function($){
+  // Reemplaza el toggle inestable de flexnav por un show/hide explicito
+  $('.item-with-ul').off('mouseenter mouseleave');
+  $('.item-with-ul').on('mouseenter', function(){
+    $(this).find('>ul').stop(true, true).addClass('flexnav-show').fadeIn(150);
+  }).on('mouseleave', function(){
+    $(this).find('>ul').stop(true, true).removeClass('flexnav-show').fadeOut(150);
+  });
+});
+</script>
+
 <script id="harington-contact-js-extra">
 var ClapatMapOptions = {"map_marker_image":"https://nsxcreative.com/wp-content/uploads/2022/12/client-08-black.png","map_address":"775 New York Ave, Brooklyn, Kings, New York 11203","map_zoom":"16","marker_title":"NSX Creative","marker_text":"Here we are. Come to drink a coffee!","map_type":"satellite","map_api_key":""};
 //# sourceURL=harington-contact-js-extra
