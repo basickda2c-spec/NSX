@@ -1056,43 +1056,43 @@
 	h1.big-title.has-mask span, h1.big-title.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:12px;
+		margin-right:12px!important;
 	}
 	
 	h1.has-mask span, h1.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:12px;
+		margin-right:12px!important;
 	}
 	
 	h2.has-mask span, h2.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:10px;
+		margin-right:10px!important;
 	}
 	
 	h3.has-mask span, h3.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:8px;
+		margin-right:8px!important;
 	}	
 	
 	h4.has-mask span, h4.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:7px;
+		margin-right:7px!important;
 	}
 	
 	h5.has-mask span, h5.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:6px;
+		margin-right:6px!important;
 	}
 	
 	h6.has-mask span, h6.has-mask span > span {
 		line-height:inherit;
 		height:inherit;
-		margin-right:5px;
+		margin-right:5px!important;
 	}
 	
 	.has-mask-fill > span {
