@@ -248,7 +248,51 @@ var VPData = {"version":"3.3.16","pro":false,"__":{"couldnt_retrieve_vp":"Couldn
 
 
 </style>
-<script src="./assets/wp-emoji-release.min.js" defer=""></script></head>
+<script src="./assets/wp-emoji-release.min.js" defer=""></script><style id="nsx-hasmask-fix">
+/* Fix has-mask word spacing - override span-per-word system */
+.has-mask { overflow: visible !important; }
+.has-mask span { 
+    display: inline !important; 
+    margin: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+.has-mask span > span {
+    display: inline !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    height: auto !important;
+}
+</style>
+<script id="nsx-hasmask-js">
+document.addEventListener('DOMContentLoaded', function() {
+    // Unwrap all has-mask elements: replace span-per-word with plain text
+    document.querySelectorAll('.has-mask').forEach(function(el) {
+        // Get all inner spans (words)
+        var spans = el.querySelectorAll('span > span');
+        if (spans.length > 0) {
+            var words = [];
+            spans.forEach(function(s) { words.push(s.textContent); });
+            el.innerHTML = words.join(' ');
+        } else {
+            var outerSpans = el.querySelectorAll('span');
+            if (outerSpans.length > 0) {
+                var words = [];
+                outerSpans.forEach(function(s) { 
+                    if (s.children.length === 0) words.push(s.textContent); 
+                });
+                if (words.length > 0) el.innerHTML = words.join(' ');
+            }
+        }
+    });
+});
+</script>
+</head>
 
 <body class="home wp-singular page-template-default page page-id-4420 wp-embed-responsive wp-theme-harington hero-below-caption disable-ajaxload uppercase-text elementor-default elementor-kit-7 elementor-page elementor-page-4420 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit header-visible" data-primary-color="#e2e2e2" style="" data-elementor-device-mode="desktop">
 		<script>
@@ -617,9 +661,7 @@ var VPData = {"version":"3.3.16","pro":false,"__":{"couldnt_retrieve_vp":"Couldn
 						<div class="page-nav-caption text-align-left marquee-title content-full-width">
 							<div class="inner">
 								<a class="page-title next-ajax-link-page" href="https://nsxcreative.com/about-2/" data-type="page-transition" data-firstline="Next" data-secondline="Page">
-									<div class="next-hero-title-wrapper">
-										<div class="next-hero-title" style="translate: none; rotate: none; scale: none; transform: translate(-39.69%, 0%) translate3d(0px, 0px, 0px);"><span>Digital Creative Studio</span></div>
-									<div class="next-hero-title" style="left: 1592px; top: 0px; position: absolute; translate: none; rotate: none; scale: none; transform: translate(-39.69%, 0%) translate3d(0px, 0px, 0px);"><span style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Digital Creative Studio</span></div></div>
+									<div class="next-hero-title-wrapper" style="animation: content-marquee 18s linear infinite;"><div class="next-hero-title"><span>Digital Creative Studio</span></div><div class="next-hero-title"><span>Digital Creative Studio</span></div></div>
 								</a>
 																<div class="next-hero-subtitle-wrapper">
 									<div class="next-hero-subtitle"><span>We would love to hear from you.</span><span>Let’s work together.</span></div>

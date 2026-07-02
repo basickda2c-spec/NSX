@@ -245,7 +245,51 @@ var VPData = {"version":"3.3.16","pro":false,"__":{"couldnt_retrieve_vp":"Couldn
 
 
 </style>
-<script src="./assets/wp-emoji-release.min.js" defer=""></script></head>
+<script src="./assets/wp-emoji-release.min.js" defer=""></script><style id="nsx-hasmask-fix">
+/* Fix has-mask word spacing - override span-per-word system */
+.has-mask { overflow: visible !important; }
+.has-mask span { 
+    display: inline !important; 
+    margin: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+.has-mask span > span {
+    display: inline !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    height: auto !important;
+}
+</style>
+<script id="nsx-hasmask-js">
+document.addEventListener('DOMContentLoaded', function() {
+    // Unwrap all has-mask elements: replace span-per-word with plain text
+    document.querySelectorAll('.has-mask').forEach(function(el) {
+        // Get all inner spans (words)
+        var spans = el.querySelectorAll('span > span');
+        if (spans.length > 0) {
+            var words = [];
+            spans.forEach(function(s) { words.push(s.textContent); });
+            el.innerHTML = words.join(' ');
+        } else {
+            var outerSpans = el.querySelectorAll('span');
+            if (outerSpans.length > 0) {
+                var words = [];
+                outerSpans.forEach(function(s) { 
+                    if (s.children.length === 0) words.push(s.textContent); 
+                });
+                if (words.length > 0) el.innerHTML = words.join(' ');
+            }
+        }
+    });
+});
+</script>
+</head>
 
 <body class="wp-singular post-template-default single single-post postid-5186 single-format-standard wp-embed-responsive wp-theme-harington hero-below-caption disable-ajaxload uppercase-text elementor-default elementor-kit-7 header-visible" data-primary-color="#e2e2e2" style="">
 		<script>
