@@ -533,7 +533,8 @@ Function Scroll Effects
 			var total = words.length;
 			$(this).empty();
 			for (index = 0; index < total; index ++){
-				$(this).append($("<span /> ").text(words[index]));
+				var $span = $("<span />").text(words[index]).css('margin-right', '0.25em');
+				$(this).append($span);
 			}
 		});
 		
@@ -542,7 +543,8 @@ Function Scroll Effects
 			var total = words.length;
 			$(this).empty();
 			for (index = 0; index < total; index ++){
-				$(this).append($("<span /> ").text(words[index]));
+				var $span = $("<span />").text(words[index]).css('margin-right', '0.25em');
+				$(this).append($span);
 			}
 		});
 		
