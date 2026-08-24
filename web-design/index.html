@@ -60,18 +60,14 @@
 <script id="jquery-migrate-js" src="./assets/jquery-migrate.min.js"></script>
 <style id="site-custom-css">
 
-/* Hero simple: título + imagen, sin cálculos de altura por JS */
-.simple-hero {
-  text-align: center;
+@media only screen and (max-width: 1466px){
+      #hero-caption {
+          padding-top: 360px;
+      }
 }
 
-.simple-hero-title {
-  font-family: "integra";
-  font-weight: 400;
-  padding: 140px 0 40px;
-  margin: 0;
-}
-
+/* Hero simple: se mantiene el título con sus clases originales del tema (hero-caption / hero-title),
+   solo se simplifica el manejo de la imagen de fondo, sin cálculos de altura por JS */
 .simple-hero-image {
   display: block;
   width: 100%;
@@ -210,9 +206,15 @@
 </header>
 <div id="content-scroll">
 <div id="main" style="opacity: 1;">
-<!-- Hero Section (simplificado: título + imagen, sin JS/parallax) -->
-<div class="simple-hero" id="hero">
-<h1 class="simple-hero-title">Website<br/>Platforms</h1>
+<!-- Hero Section (simplificado: sin JS/parallax, pero con las clases originales del título para que se vea igual) -->
+<div class="has-image" id="hero">
+<div class="content-full-width block-title" id="hero-caption">
+<div class="inner">
+<div class="hero-title-wrapper">
+<div class="hero-title"><span>Website</span><span>Platforms</span></div>
+</div>
+</div>
+</div>
 <img class="simple-hero-image" src="./assets/WEBSITE-PLATFORMS-darkgreybg-1.jpg" alt="Website Platforms"/>
 </div>
 <!--/Hero Section -->
