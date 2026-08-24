@@ -66,33 +66,6 @@
       }
 }
 
-/* Hero simple: forzamos que el título se vea SIEMPRE, sin depender de las animaciones
-   GSAP del tema (que lo dejan en opacity:0 hasta que corre toda la secuencia del preloader) */
-#hero.simple-hero {
-  height: auto !important;
-  min-height: 0 !important;
-  position: relative !important;
-}
-
-#hero-caption {
-  position: relative !important;
-  height: auto !important;
-  padding: 140px 0 40px !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-#hero-caption .inner,
-#hero-caption .hero-title-wrapper,
-#hero-caption .hero-title,
-#hero-caption .hero-title span {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  -webkit-transform: none !important;
-  display: revert !important;
-}
-
 /* Hero simple: se mantiene el título con sus clases originales del tema (hero-caption / hero-title),
    solo se simplifica el manejo de la imagen de fondo, sin cálculos de altura por JS */
 .simple-hero-image {
